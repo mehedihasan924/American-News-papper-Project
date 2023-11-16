@@ -21,7 +21,7 @@ const Main = () => {
                     </Col>
                     <Col lg={3}>
 
-                    <RightNav></RightNav>
+                    <RightNav> </RightNav>
                     </Col>
                 </Row>
             </Container>
