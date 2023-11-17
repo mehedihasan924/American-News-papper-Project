@@ -21,9 +21,10 @@ const RightNav = () => {
            <QZone></QZone>
 
             <div className='position-relative '> 
-            <div className='text-center position-absolute top-5 text-light '>
+            <div className='text-center position-absolute pt-5 text-light '>
                      <h4>Create an Amazing Newspaper</h4>
                      <p>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
+                     <Button className='btn '> Learn More </Button>
                 </div>
                 <img src={Right_img} alt="" />
 
