@@ -15,7 +15,7 @@ const Header = () => {
             
             </div>
      {/* Marquee Teg Seting */}
-            <div className='d-flex'>
+            <div className='d-flex '>
                 <Button variant="danger"> Latest</Button>
                 <Marquee className='text-danger' speed={100}>
                     I can be a React component, multiple React components, or just some text...... I can be a React component, multiple React components, or just some text.
@@ -23,12 +23,12 @@ const Header = () => {
             </div>
 
       {/* Navbar Style */}
-            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary d-flex align-items-center ">
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Nav.Link >Home</Nav.Link> 
+                            <Link to="/">Home</Link> 
                             <Nav.Link href="#pricing">About</Nav.Link>  
                             <Nav.Link href="#pricing">Creer</Nav.Link>                                         
                         </Nav>

@@ -3,13 +3,22 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import img from '../../../public/vite.svg'
+import {FaRegBookmark , FaShareAlt} from 'react-icons/fa'
+import moment from 'moment';
 const NewsCart = ({news}) => {
-    const {_id, title, details,image_url,  }=news
+    const {_id, title, details,image_url,author  }=news
     return (
         <div>
-            <Card className="text-center mb-3">
-                <Card.Header>
-                <Image src={img} roundedCircle />
+            <Card className=" mb-3">
+                <Card.Header className='d-flex gap-3 align-items-center '>
+                 <Image src={img} roundedCircle />
+                 <div className='flex-grow-1'>
+                    <p className='mb-0'> {author?.name}</p>
+                    <p><small>{moment(author?.published_date).format("yyyy-MM-D")}  </small></p>
+                 </div>
+                 <div>
+                    <FaRegBookmark />  <FaShareAlt></FaShareAlt>
+                 </div>
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
