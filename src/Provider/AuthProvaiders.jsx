@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import  { createContext} from 'react';
-import {  useParams } from 'react-router-dom';
-
+import { getAuth } from "firebase/auth";
+import app from '../Firebase/firebase.config'
 export const AuthContext= createContext(null)
 
+
+const auth =getAuth(app)
 const AuthProvaiders = ({children}) => {
 
-    const [categories, setCategories]=useState([])
-    const {id}=useParams()
-    useEffect(()=>{
-        fetch(`http://localhost:3000/categories/${params.id}`)
-        .then(res=> res.json())
-        .then(data=>setCategories(data))
-    }, [])
-
+   const user={ displayName: "Mehedi Hasan "}
     const authInfo={
-        categories
+        user
        }
     return (
         <AuthContext.Provider value={authInfo}>

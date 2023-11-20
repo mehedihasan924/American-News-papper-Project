@@ -10,7 +10,7 @@ import SingNewsCard from '../SingleNewsCard/SingNewsCard';
 const NewsDetails = () => {
  const news=useLoaderData()
     const { title, details,image_url, category_id}=news;
-
+    
     return (
       <div>
         <Card >

@@ -26,9 +26,7 @@ const RightNav = () => {
                      <p>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
                      <Button className='btn '> Learn More </Button>
                 </div>
-                <img src={Right_img} alt="" />
-
-               
+                <img src={Right_img} alt=""/>               
            </div>
         </div>
     );

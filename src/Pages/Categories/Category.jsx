@@ -9,15 +9,18 @@ const Category = () => {
    
     return (
         <div>
-            <h1>This is ID: {id}</h1>
-            <h1>: {caterogiseData.length}</h1>
+           {
+              id && <h1>This is Category ID: {id}</h1>
+           }
+            {
+                id && <h1> Total News: {caterogiseData.length}</h1>
+            } 
             {
                 caterogiseData.map(news=>
                      <NewsCart 
                      key={news.id}
                      news={news}
                      >
-
                      </NewsCart>)
             }
 
