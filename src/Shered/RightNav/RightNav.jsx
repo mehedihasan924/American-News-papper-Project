@@ -2,7 +2,7 @@ import { Button, ListGroup } from 'react-bootstrap';
 import React from 'react';
 import { FaGoogle, FaGithub, FaFacebookF, FaTwitter, FaInstagram  } from "react-icons/fa";
 import QZone from '../Q-Zone/QZone';
-import Right_img from '../../assets/bg1.png'
+import Right_img from '../../assets/bg1.png';
 
 const RightNav = () => {
     return (
@@ -21,7 +21,7 @@ const RightNav = () => {
            <QZone></QZone>
 
             <div className='position-relative '> 
-            <div className='text-center position-absolute pt-5 text-light '>
+            <div className='text-center position-absolute pt-5 text-light' style={{marginTop:"100px"}}>
                      <h4>Create an Amazing Newspaper</h4>
                      <p>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
                      <Button className='btn '> Learn More </Button>
