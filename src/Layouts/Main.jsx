@@ -7,12 +7,14 @@ import Col from 'react-bootstrap/Col';
 import LeftNav from '../Shered/LefatNav/LeftNav';
 import RightNav from '../Shered/RightNav/RightNav';
 import {Outlet} from 'react-router-dom'
+import Navigationbar from '../Shered/Navigationbar/Navigationbar';
 
 
 const Main = () => {
     return (
         <div>
             <Header></Header>
+            <Navigationbar></Navigationbar>
             <Container>
                 <Row>
                     <Col lg={3}> 

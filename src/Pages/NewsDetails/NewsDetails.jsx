@@ -1,16 +1,29 @@
 import Button from 'react-bootstrap/Button';
-import React from 'react';
-import { Card, ListGroup } from 'react-bootstrap';
+import React, { useEffect, useState,useContext } from 'react';
+import { Card, ListGroup, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-// import SingNewsCard from '../SingleNewsCard/SingNewsCard';
-import NewsCart from '../NewsCart/NewsCart';
-import SingNewsCard from '../SingleNewsCard/SingNewsCard';
+import { AuthContext } from '../../Provider/AuthProvaiders';
+import Singlecard from '../Singlecard';
+
 
 const NewsDetails = () => {
  const news=useLoaderData()
     const { title, details,image_url, category_id}=news;
-    
+  
+    console.log(news);
+
+    const {data , setData }  = useContext(AuthContext)
+    console.log({data},'from newsdetails')
+
+  //   useEffect(()=>{
+  //   fetch("http://localhost:3000/news")
+  //   .then(res=>res.json())
+  //   .then(data => setData(data))
+  //   },[] )
+  //  console.log(data);
+
+
     return (
       <div>
         <Card >
@@ -24,6 +37,15 @@ const NewsDetails = () => {
         </Card.Body>
       </Card>
        
+      <Row className='d-flex  flex-row ' lg={3} length={3}>
+        {
+          data.slice(0,3).map((news)=> <Singlecard key={news.id}
+          newsData={news}
+          >
+            
+            </Singlecard>)
+        }
+       </Row>
     
       </div>  
     );

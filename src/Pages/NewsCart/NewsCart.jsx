@@ -1,3 +1,4 @@
+
 import { Button, Image } from 'react-bootstrap';
 import React from 'react';
 import Card from 'react-bootstrap/Card';
@@ -6,9 +7,13 @@ import img from '../../../public/vite.svg'
 import {FaRegBookmark , FaShareAlt, FaEye, FaRegStar, FaStar} from 'react-icons/fa'
 import moment from 'moment';
 import Rating from 'react-rating';
-import SingNewsCard from '../SingleNewsCard/SingNewsCard';
+import Iframe from 'react-iframe'
+
+
 const NewsCart = ({news}) => {
     const {_id, title, details,image_url,author, rating, total_view}=news
+
+    console.log(image_url);
     return (
         <div>
             <Card className=" mb-3">
@@ -24,7 +29,7 @@ const NewsCart = ({news}) => {
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
-                    <Card.Img variant='top' src={image_url} />
+                    <Card.Img variant='top' src={image_url} />                                
                     <Card.Text >
                       {details.length < 250 ? <>{details}  </> : <>{details.slice(0, 250)}...<Link to={`/news/${_id}`}>Read More </Link> </>}
                     </Card.Text>
