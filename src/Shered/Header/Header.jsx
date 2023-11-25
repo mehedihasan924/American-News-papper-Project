@@ -22,7 +22,7 @@ const Header = () => {
             <div className='d-flex '>
                 <Button variant="danger"> Latest</Button>
                 <Marquee className='text-danger' speed={100}>
-                    I can be a React component, multiple React components, or just some text...... I can be a React component, multiple React components, or just some text.
+                   I can be a React component, multiple React components, or just some text...... I can be a React component, multiple React components, or just some text.
                 </Marquee>
             </div>
 

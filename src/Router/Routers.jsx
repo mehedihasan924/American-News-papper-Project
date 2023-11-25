@@ -6,6 +6,7 @@ import NewsDetails from '../Pages/NewsDetails/NewsDetails'
 import LoginLayout from '../Layouts/LoginLayout'
 import Login from '../Pages/Login/Login'
 import Register from '../Pages/Register/Register'
+import PrivetRoute from './PrivetRoute'
 
 
 const router=createBrowserRouter([
@@ -15,7 +16,7 @@ const router=createBrowserRouter([
     children:[
         {
             path:"/",
-            element:<Navigate to="/category/0"></Navigate>
+            element:<Navigate to="/categories/0"></Navigate>
         },
       { 
          path: "login",
@@ -25,11 +26,10 @@ const router=createBrowserRouter([
         path: "register",
         element:<Register></Register>
       }
-
     ]
    },
     {
-        path: "category",
+        path: "categories",
         element:<Main></Main>,
         children: [
            
@@ -48,7 +48,7 @@ const router=createBrowserRouter([
         children:[
          {
             path:":id",
-            element: <NewsDetails></NewsDetails>,
+            element: <PrivetRoute> <NewsDetails></NewsDetails> </PrivetRoute> ,
             loader:({params})=>fetch(`http://localhost:3000/news/${params.id}`)
         }
     ]
