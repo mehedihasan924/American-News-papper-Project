@@ -1,11 +1,13 @@
-import React,{useContext} from 'react';
+import React,{useContext, useState} from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvaiders';
 
 const Register = () => {
 
 const {createUser}=useContext(AuthContext)
+const navigate=useNavigate()
+
 
  const handleRegister=(event)=>{
        event.preventDefault();
@@ -20,13 +22,18 @@ const {createUser}=useContext(AuthContext)
         .then(result =>{
             const createUser=result.user;
             console.log(createUser);
+            navigate("/")
         })
         .catch(error =>{
             console.log(error);
         })
-
-
  }
+
+   const [accepted, setAccepted]=useState(false)
+  const handleAccepted=(event)=>{
+     setAccepted(event.target.checked);
+  }
+
 
     return (
         <Container className=' w-50 mx-auto'>
@@ -48,10 +55,13 @@ const {createUser}=useContext(AuthContext)
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password"  required/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Accept Trans and Condition" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check 
+                        onClick={handleAccepted}
+                        type="checkbox"
+                        label={<> Accept <Link  to="/trems"> "Accept Trans and Condition"</Link></>} />
+                    </Form.Group>
+                <Button disabled={!accepted} variant="primary" type="submit">
                     Submit
                 </Button>
                 <Form.Text>

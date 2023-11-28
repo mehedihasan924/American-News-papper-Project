@@ -8,12 +8,13 @@ import Singlecard from '../Singlecard';
 
 
 const NewsDetails = () => {
+
  const news=useLoaderData()
     const { title, details,image_url, category_id}=news;
   
     console.log(news);
-
-    const {data , setData }  = useContext(AuthContext)
+//Masum Vai use context
+    const {data , setData ,user}  = useContext(AuthContext)
     console.log({data},'from newsdetails')
 
   //   useEffect(()=>{
@@ -38,13 +39,12 @@ const NewsDetails = () => {
       </Card>
        
       <Row className='d-flex  flex-row ' lg={3} length={3}>
-        {
-          data.slice(0,3).map((news)=> <Singlecard key={news.id}
+        {/* {
+             data.slice( 0,3).map((news)=> <Singlecard key={news.id}
           newsData={news}
-          >
-            
-            </Singlecard>)
-        }
+          >     
+            </Singlecard> ) 
+        } */}
        </Row>
     
       </div>  

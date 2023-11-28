@@ -7,6 +7,7 @@ import LoginLayout from '../Layouts/LoginLayout'
 import Login from '../Pages/Login/Login'
 import Register from '../Pages/Register/Register'
 import PrivetRoute from './PrivetRoute'
+import Trems from '../Shered/Trams/Trems'
 
 
 const router=createBrowserRouter([
@@ -25,6 +26,10 @@ const router=createBrowserRouter([
       {
         path: "register",
         element:<Register></Register>
+      },
+      {
+        path: "trems",
+        element:<Trems></Trems>
       }
     ]
    },
@@ -44,7 +49,7 @@ const router=createBrowserRouter([
 
     {
         path:"news",
-        element:<NewsFeed></NewsFeed>,
+        element:  <NewsFeed></NewsFeed>,
         children:[
          {
             path:":id",

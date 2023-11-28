@@ -9,22 +9,29 @@ const auth =getAuth(app)
 
 
 const AuthProvaiders = ({children}) => {
-
+//Masum Vai use context
      const [data ,setData ] = useState();
     //  console.log({data});
+    
 
-
+    // handle load
+  const [loading, setLoading]=useState(true);
+ 
   //  Authentication Suystem
       const [user, setUser]=useState(null)
      
       const createUser=(email, password)=>{
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
       }
       const signIn=(email, password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
       }
-      const logOut=()=>{
-        return signOut(auth)
+      const logOut=()=>{ 
+        setLoading(true);
+        return signOut(auth);
+        
       }
 
 // User ase kina check and state set
@@ -33,6 +40,7 @@ useEffect(()=>{
      const unsubscribe= onAuthStateChanged(auth, loggedUser=>{
       console.log("logged user inside auth state obseever" , loggedUser);
       setUser(loggedUser)
+      setLoading(false);
      })
      return()=>{
         unsubscribe();
@@ -43,11 +51,11 @@ useEffect(()=>{
         data ,
         setData,
         user,
+        loading,
         createUser,
         signIn,
-        logOut
-
-
+        logOut,
+       
     }
 
 

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "array-slice": "^1.1.0",
     "bootstrap": "^5.3.2",
     "firebase": "^10.6.0",
     "localforage": "^1.10.0",
