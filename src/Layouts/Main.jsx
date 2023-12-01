@@ -8,9 +8,11 @@ import LeftNav from '../Shered/LefatNav/LeftNav';
 import RightNav from '../Shered/RightNav/RightNav';
 import {Outlet} from 'react-router-dom'
 import Navigationbar from '../Shered/Navigationbar/Navigationbar';
+import useTitle from '../hooks/useTitle';
 
 
 const Main = () => {
+    useTitle("Home")
     return (
         <div>
             <Header></Header>
