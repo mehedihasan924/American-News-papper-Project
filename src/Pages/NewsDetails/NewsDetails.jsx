@@ -18,7 +18,7 @@ const NewsDetails = () => {
     console.log({data},'from newsdetails')
 
   //   useEffect(()=>{
-  //   fetch("http://localhost:3000/news")
+  //   fetch("http://localhost:5000/news")
   //   .then(res=>res.json())
   //   .then(data => setData(data))
   //   },[] )
