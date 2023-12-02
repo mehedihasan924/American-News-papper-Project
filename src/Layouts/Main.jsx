@@ -11,6 +11,7 @@ import Navigationbar from '../Shered/Navigationbar/Navigationbar';
 import useTitle from '../hooks/useTitle';
 
 
+
 const Main = () => {
     useTitle("Home")
     return (
@@ -31,7 +32,7 @@ const Main = () => {
                     </Col>
                 </Row>
             </Container>
-            <Footer></Footer>
+            <Footer></Footer> 
         </div>
     );
 };

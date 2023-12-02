@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import GoogleMaps from '../../Shered/Maps/GoogleMaps';
 const LeftNav = () => {
 
     const [categories, setCategories]=useState([])
@@ -22,6 +22,7 @@ const LeftNav = () => {
                 </p>
                 ) 
             }
+              <GoogleMaps></GoogleMaps>
         </div>
     );
 };

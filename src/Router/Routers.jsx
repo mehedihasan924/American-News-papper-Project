@@ -28,7 +28,7 @@ const router=createBrowserRouter([
         element:<Register></Register>
       },
       {
-        path: "trems",
+        path:"trems",
         element:<Trems></Trems>
       }
     ]
